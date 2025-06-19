@@ -29,7 +29,7 @@ public class GoalManager
     {
         int userChoice = 0;
 
-        while (userChoice != 7)
+        while (userChoice != 6)
         {
             DisplayPlayerInfo();
 
