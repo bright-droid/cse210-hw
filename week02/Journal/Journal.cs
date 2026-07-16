@@ -35,18 +35,13 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine($"{entry._date}||{entry._time} || {entry._promptText}||{entry._entryText}");
+                outputFile.WriteLine($"{entry._date}||{entry._time}||{entry._promptText}||{entry._entryText}");
             }
         }
     }
 
     public void LoadFromFile(string filename)
     {
-        if (_entries.Count() == 0)
-        {
-            Console.WriteLine("You do not have any files yet.");
-        }
-
         _entries.Clear();
 
         string[] lines = System.IO.File.ReadAllLines(filename);
@@ -55,7 +50,7 @@ public class Journal
         {
             string[] parts = line.Split("||");
 
-            if (parts.Count() == 3)
+            if (parts.Count() == 4)
             {
                 string date = parts[0];
                 string time = parts[1];
@@ -66,9 +61,8 @@ public class Journal
                 entry._date = date;
                 entry._time = time;
                 _entries.Add(entry);
+                
             }
-
         }
-        Console.WriteLine($"Loaded from {filename}");
     }
 }

@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        //for exceeding the core requirements, I added
+        //displaying time along with date in the Display method
         Journal journal = new Journal();
         Console.WriteLine("Welcome to the Journal Program!");
         string option = "";
